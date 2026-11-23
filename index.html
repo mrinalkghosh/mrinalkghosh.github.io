@@ -8,6 +8,44 @@
   <title>Mrinalkanti Ghosh</title>
   <link rel="preload" href="assets/stix-two-text.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .works .section-heading { flex-wrap: wrap; row-gap: 0.55rem; }
+    .publication-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem 0.95rem;
+    }
+    .synopses-toggle {
+      padding: 0.28rem 0.65rem;
+      border: 1px solid var(--rule);
+      border-radius: 0.2rem;
+      background: var(--paper);
+      color: var(--wine);
+      font: 500 0.96rem/1.35 var(--sans);
+      cursor: pointer;
+    }
+    .synopses-toggle:hover { border-color: var(--wine); }
+    .synopses-toggle:focus-visible { outline: 2px solid var(--wine); outline-offset: 3px; }
+    .synopsis { margin-top: 0.35rem; }
+    .synopsis summary {
+      width: fit-content;
+      color: var(--wine);
+      font-size: 0.96rem;
+      cursor: pointer;
+      text-underline-offset: 0.18em;
+    }
+    .synopsis summary:hover { text-decoration: underline; }
+    .synopsis p {
+      max-width: 70ch;
+      margin: 0.45rem 0 0.65rem;
+      padding-inline-start: 0.85rem;
+      border-inline-start: 2px solid var(--faint-rule);
+      font-size: 1.0625rem;
+    }
+    .synopsis .math { font-family: var(--serif); white-space: nowrap; }
+    @media print { .synopses-toggle { display: none; } }
+  </style>
 </head>
 <body id="top">
   <a class="skip-link" href="#about">Skip to main content</a>
@@ -41,7 +79,10 @@
       <section class="works" id="publications" aria-labelledby="publications-heading" tabindex="-1">
         <div class="section-heading">
           <h2 id="publications-heading">Publications</h2>
-          <a class="section-link" href="https://dblp.org/pid/86/11469.html" aria-label="Mrinalkanti Ghosh’s DBLP bibliography">DBLP</a>
+          <div class="publication-controls">
+            <button class="synopses-toggle" id="toggle-synopses" type="button" hidden>Expand all synopses</button>
+            <a class="section-link" href="https://dblp.org/pid/86/11469.html" aria-label="Mrinalkanti Ghosh’s DBLP bibliography">DBLP</a>
+          </div>
         </div>
         <ol class="entries" role="list">
           <li class="entry">
@@ -49,6 +90,10 @@
             <div class="work">
               <h3><a href="https://arxiv.org/abs/2611.08836">Hardness of Approximation for Polynomial Optimization over Sphere for Linear Programming Relaxation Hierarchy</a></h3>
               <p class="authors">Mrinalkanti Ghosh</p>
+              <details class="synopsis" id="synopsis-moment-lp">
+                <summary>Synopsis<span class="visually-hidden"> of the moment LP paper</span></summary>
+                <p>I use random spherical harmonics to show how far a moment LP can overestimate the maximum absolute value of a polynomial on the unit sphere. For quartics in <var>n</var> variables, the gap is already <span class="math">Ω(<var>n</var><sup>3/2</sup>/√(log <var>n</var>))</span> with high probability for a degree-eight LP, even after adding any polynomial-size family of valid inequalities fixed independently of the quartic.</p>
+              </details>
             </div>
           </li>
           <li class="entry">
@@ -56,6 +101,10 @@
             <div class="work">
               <h3><a href="https://arxiv.org/abs/2009.01874">Sum-of-Squares Lower Bounds for Sherrington-Kirkpatrick via Planted Affine Planes</a></h3>
               <p class="authors">Mrinalkanti Ghosh, Fernando Granha Jeronimo, Chris Jones, Aaron Potechin, and Goutham Rajendran</p>
+              <details class="synopsis" id="synopsis-affine-planes">
+                <summary>Synopsis<span class="visually-hidden"> of the Sherrington–Kirkpatrick paper</span></summary>
+                <p>How well can sum of squares certify the maximum energy of a random Sherrington–Kirkpatrick instance on <var>n</var> spins? We show that, with high probability, even degree <span class="math"><var>n</var><sup>δ</sup></span> for some <span class="math">δ &gt; 0</span> fails to improve the spectral upper bound by a constant factor. The proof starts by asking whether one can certify that random points do not all lie on two parallel hyperplanes equidistant from the origin.</p>
+              </details>
             </div>
           </li>
           <li class="entry">
@@ -63,6 +112,10 @@
             <div class="work">
               <h3><a href="https://doi.org/10.1137/1.9781611975482.83">Approximability of <i>p</i> → <i>q</i> Matrix Norms: Generalized Krivine Rounding and Hypercontractive Hardness</a></h3>
               <p class="authors">Vijay Bhattiprolu, Mrinalkanti Ghosh, Venkatesan Guruswami, Euiwoong Lee, and Madhur Tulsiani</p>
+              <details class="synopsis" id="synopsis-matrix-norms">
+                <summary>Synopsis<span class="visually-hidden"> of the SODA paper on matrix norms</span></summary>
+                <p>We generalize Krivine’s rounding to approximate the norm of a matrix as a map from <span class="math">ℓ<sub><var>p</var></sub></span> to <span class="math">ℓ<sub><var>q</var></sub></span>. The approximation factor is independent of dimension when <span class="math"><var>p</var> ≥ 2 ≥ <var>q</var></span>. For <span class="math">1 &lt; <var>p</var> &lt; <var>q</var> &lt; 2</span> or <span class="math">2 &lt; <var>p</var> &lt; <var>q</var> &lt; ∞</span>, we rule out even a polynomial-time constant-factor approximation unless NP has randomized quasipolynomial-time algorithms.</p>
+              </details>
               <details class="versions">
                 <summary>Full versions of the two papers</summary>
                 <ul>
@@ -77,6 +130,10 @@
             <div class="work">
               <h3><a href="https://arxiv.org/abs/1611.05998">Weak Decoupling, Polynomial Folds, and Approximate Optimization over the Sphere</a></h3>
               <p class="authors">Vijay Bhattiprolu, Mrinalkanti Ghosh, Venkatesan Guruswami, Euiwoong Lee, and Madhur Tulsiani</p>
+              <details class="synopsis" id="synopsis-weak-decoupling">
+                <summary>Synopsis<span class="visually-hidden"> of the weak decoupling paper</span></summary>
+                <p>We use weak decoupling to approximate the maximum absolute value of a homogeneous polynomial on the unit sphere. For a quartic in <var>n</var> variables and any positive multiple <var>q</var> of eight up to <var>n</var>, we give an <span class="math">O(<var>n</var>/<var>q</var>)</span> approximation in <span class="math"><var>n</var><sup>O(<var>q</var>)</sup></span> time. The guarantee holds against the degree-<var>q</var> sum-of-squares bound. With nonnegative coefficients, the approximation factor improves to <span class="math">O(√(<var>n</var>/<var>q</var>))</span>.</p>
+              </details>
             </div>
           </li>
           <li class="entry">
@@ -84,6 +141,10 @@
             <div class="work">
               <h3><a href="https://arxiv.org/abs/1608.00497">From Weak to Strong LP Gaps for All CSPs</a></h3>
               <p class="authors">Mrinalkanti Ghosh and Madhur Tulsiani</p>
+              <details class="synopsis" id="synopsis-csp-gaps">
+                <summary>Synopsis<span class="visually-hidden"> of the CSP integrality gaps paper</span></summary>
+                <p>Starting from an integrality gap for the basic LP of a constraint satisfaction problem, we construct instances on <var>n</var> variables that retain the gap, up to an arbitrarily small additive loss, through <span class="math">Ω(log <var>n</var> / log log <var>n</var>)</span> rounds of Sherali–Adams. Together with earlier results on extended formulations, this shows that the basic LP captures the worst-case approximation power of polynomial-size LPs for CSPs.</p>
+              </details>
               <p class="related"><a href="https://theoryofcomputing.org/articles/v014a010/">Theory of Computing, 2018</a></p>
             </div>
           </li>
@@ -92,6 +153,10 @@
             <div class="work">
               <h3><a href="https://arxiv.org/abs/1404.0766">Ornstein Isomorphism and Algorithmic Randomness</a></h3>
               <p class="authors">Mrinalkanti Ghosh, Satyadev Nandakumar, and Atanu Pal</p>
+              <details class="synopsis" id="synopsis-ornstein">
+                <summary>Synopsis<span class="visually-hidden"> of the Ornstein isomorphism paper</span></summary>
+                <p>An isomorphism in ergodic theory may discard a set of measure zero. For two computable mixing Markov shifts with equal entropy, we adapt the finitary coding of Keane and Smorodinsky to give an isomorphism defined on every Martin-Löf random sequence. The map is layerwise computable, so a bound on the sequence’s randomness deficiency suffices to compute its image from the sequence.</p>
+              </details>
             </div>
           </li>
           <li class="entry">
@@ -99,6 +164,10 @@
             <div class="work">
               <h3><a href="https://arxiv.org/abs/1205.2996">Predictive Complexity and Generalized Entropy Rate of Stationary Ergodic Processes</a></h3>
               <p class="authors">Mrinalkanti Ghosh and Satyadev Nandakumar</p>
+              <details class="synopsis" id="synopsis-predictive-complexity">
+                <summary>Synopsis<span class="visually-hidden"> of the predictive complexity paper</span></summary>
+                <p>For a stationary ergodic binary source, Shannon entropy rate gives the long-run loss per symbol under optimal prediction with logarithmic loss. We extend this relation to other losses, including square loss. For a strongly regular mixable game with predictive complexity, the predictive complexity per symbol converges almost surely to the source’s generalized entropy rate for that game.</p>
+              </details>
             </div>
           </li>
         </ol>
@@ -111,5 +180,33 @@
       <a href="#top">Back to top</a>
     </footer>
   </div>
+  <script>
+    const synopses = Array.from(document.querySelectorAll("#publications details.synopsis"));
+    const toggle = document.getElementById("toggle-synopses");
+
+    function hasOpenSynopsis() {
+      return synopses.some(synopsis => synopsis.open);
+    }
+
+    function updateToggleLabel() {
+      toggle.textContent = hasOpenSynopsis() ? "Collapse all synopses" : "Expand all synopses";
+    }
+
+    for (const synopsis of synopses) {
+      synopsis.addEventListener("toggle", updateToggleLabel);
+    }
+
+    toggle.addEventListener("click", () => {
+      const expand = !hasOpenSynopsis();
+      for (const synopsis of synopses) {
+        synopsis.open = expand;
+      }
+      updateToggleLabel();
+    });
+
+    toggle.setAttribute("aria-controls", synopses.map(synopsis => synopsis.id).join(" "));
+    updateToggleLabel();
+    toggle.hidden = synopses.length === 0;
+  </script>
 </body>
 </html>
