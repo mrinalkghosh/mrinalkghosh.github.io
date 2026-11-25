@@ -92,10 +92,10 @@
               <p class="authors">Mrinalkanti Ghosh</p>
               <details class="synopsis" id="synopsis-bounded-degree-rounding">
                 <summary>Synopsis<span class="visually-hidden"> of the bounded-degree threshold rounding paper</span></summary>
-                <p>For reasonable binary Boolean CSPs with at most <var>d</var> constraints per variable, I improve the guaranteed additive gain over Gaussian rounding at fixed, bounded thresholds from <span class="math">Ω(1/(<var>d</var><sup>4</sup>(log <var>d</var>)<sup>7/2</sup>))</span> to <span class="math">Ω(1/<var>d</var><sup>2</sup>)</span>.
-                  The algorithm revisits variables near their thresholds in reverse order to increase the expected fraction of total constraint weight satisfied.</p>
+                <p>For reasonable binary Boolean CSPs with at most <var>d</var> constraints per variable, I improve the guaranteed additive gain over Gaussian rounding at fixed, bounded thresholds from <span class="math">Ω(1/(<var>d</var><sup>4</sup>(log <var>d</var>)<sup>7/2</sup>))</span> to <span class="math">Ω(1/<var>d</var><sup>2</sup>)</span>, measured as a fraction of total constraint weight.
+                  The algorithm uses local improvement with carefully chosen Gaussian thresholds and a rule for processing variables.</p>
                 <p>For weighted Max {1,2}-Horn-SAT, I give the first bounded-degree improvement over its sharp unrestricted ratio <span class="math"><var>α</var><sub>H</sub> ≈ 0.94616</span>. The algorithm achieves <span class="math"><var>α</var><sub>H</sub> + Ω(1/<var>d</var><sup>2</sup>)</span> in expectation.
-                  Tight unit clauses cast the same vote in both coupled Gaussian samples, so only the nearly tight binary clauses need jointly regular boundary geometry. Positive binary disjunctions with unit clauses of either sign admit the same gain over their own sharp ratio. For weighted Max 2-SAT, the argument removes the earlier <span class="math">log <var>d</var></span> loss.</p>
+                  Positive binary disjunctions with unit clauses of either sign admit the same gain over their own sharp ratio. For weighted Max 2-SAT, the bound removes the earlier <span class="math">log <var>d</var></span> loss.</p>
               </details>
             </div>
           </li>
